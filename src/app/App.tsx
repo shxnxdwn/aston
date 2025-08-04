@@ -1,10 +1,14 @@
-import styles from './App.module.css'
+import './styles/index.css';
+import MainLayout from '../shared/layouts/MainLayout';
+import HomePage from '../pages/home';
 
-function App() {
+const App = () => {
   return (
-    <h1 className={styles.hello}>Hello</h1>
+    <MainLayout>
+      <HomePage />
+    </MainLayout>
   )
-}
+};
 
 
 export default App;
