@@ -8,9 +8,14 @@ const ThemeSwitcher = () => {
   const {theme, changeTheme} = useTheme();
 
   return (
-    <button onClick={changeTheme}>
-      Сменить тему (текущая: {theme === Theme.Light ? 'Светлая' : 'Темная'})
-    </button>
+    <label className={styles.change}>
+      <input
+        type="checkbox"
+        checked={theme === Theme.Dark}
+        onChange={changeTheme}
+      />
+      <span className={styles.slider}></span>
+    </label>
   );
 };
 

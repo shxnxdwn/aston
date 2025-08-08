@@ -1,4 +1,5 @@
 import styles from './LayoutHeader.module.css';
+import ThemeSwitcher from '../../../features/ThemeSwitcher';
 
 
 const LayoutHeader = () => {
@@ -10,6 +11,7 @@ const LayoutHeader = () => {
           <a href="#">Главная</a>
           <a href="#">О проекте</a>
         </nav>
+        <ThemeSwitcher />
       </div>
     </header>
   );

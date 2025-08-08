@@ -25,3 +25,8 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.theme-light {
+  color: #111111;
+  background-color: #FAFAFA;
+}
