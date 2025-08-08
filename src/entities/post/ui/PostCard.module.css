@@ -1,16 +1,16 @@
 .card {
-  border: 1px solid #333333;
-  border-radius: 8px;
   padding: 1.5rem;
-  background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  transition: border-color 0.2s ease, transform 0.2s ease, background-color 0.3s ease;
 }
 
 .card:hover {
-  border-color: #FAFAFA;
+  border-color: var(--card-hover-border);
   transform: translateY(-4px);
 }
 
@@ -22,7 +22,7 @@
 
 .id {
   font-size: 0.9rem;
-  color: #888888;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -31,11 +31,11 @@
   font-weight: 700;
   text-transform: capitalize;
   letter-spacing: -0.5px;
-  color: #FAFAFA;
+  color: var(--text-primary);
 }
 
 .body {
-  color: #888888;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -43,11 +43,11 @@
   margin-top: auto;
   padding-top: 1rem;
   font-weight: 500;
-  color: #FAFAFA;
+  color: var(--link-color);
   align-self: flex-start;
   transition: opacity 0.2s ease;
 }
 
 .link:hover {
-  opacity: 0.7;
+  opacity: var(--link-hover-opacity);
 }

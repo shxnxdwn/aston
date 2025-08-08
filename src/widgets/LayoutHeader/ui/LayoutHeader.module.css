@@ -1,13 +1,14 @@
 .header {
-  width: 100%;
-  height: 70px;
   position: relative;
   top: 0;
   left: 0;
-  background-color: rgba(17, 17, 17, 0.8);
+  z-index: 1;
+  width: 100%;
+  height: 70px;
+  background-color: var(--header-bg);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #333333;
-  z-index: 1000;
+  border-bottom: 1px solid var(--header-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .container {
@@ -23,12 +24,7 @@
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
-  background-image:
-    linear-gradient(250deg,
-    #833AB4 0%,
-    #FD1D1D 50%,
-    #FCB045 100%
-    );
+  background-image: var(--logo-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -40,24 +36,11 @@
 }
 
 .nav a {
-  color: #888888;
+  color: var(--nav-link-color);
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .nav a:hover {
-  color: #FAFAFA;
-}
-
-.theme-light .header {
-  background-color: rgba(250, 250, 250, 0.8);
-  border-bottom: 1px solid #DDDDDD;
-}
-
-.theme-light .nav a {
-  color: #777777;
-}
-
-.theme-light .nav a:hover {
-  color: #111111;
+  color: var(--nav-link-hover-color);
 }

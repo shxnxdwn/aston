@@ -2,6 +2,9 @@
   width: 100%;
   height: 80px;
   margin-top: auto;
+  border-top: 1px solid var(--footer-border);
+  transition: border-color 0.3s ease;
+  background-color: var(--footer-bg);
 }
 
 .container {
@@ -15,14 +18,7 @@
 }
 
 .container p {
-  color: #888888;
+  color: var(--footer-text-color);
   font-size: 0.9rem;
-}
-
-.theme-light .footer {
-  border-top: 1px solid #DDDDDD;
-}
-
-.theme-light .container p {
-  color: #777777;
+  transition: color 0.3s ease;
 }
