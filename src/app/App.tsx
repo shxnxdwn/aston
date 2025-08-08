@@ -13,15 +13,9 @@ const App = () => {
   const {theme} = useTheme();
 
   useEffect(() => {
-    const rootElement = document.getElementById('root');
-
-    if (rootElement) {
-      rootElement.classList.remove(Theme.Dark);
-      rootElement.classList.remove(Theme.Light);
-      rootElement.classList.add(theme);
-    }
+    document.body.classList.remove(Theme.Light, Theme.Dark);
+    document.body.classList.add(theme);
   }, [theme]);
-
 
   return (
     <MainLayout header={<LayoutHeader />} footer={<LayoutFooter />}>

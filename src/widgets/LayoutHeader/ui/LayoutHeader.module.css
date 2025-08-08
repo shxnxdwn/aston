@@ -2,7 +2,7 @@
   position: relative;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 10;
   width: 100%;
   height: 70px;
   background-color: var(--header-bg);
@@ -18,16 +18,22 @@
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .logo {
+  margin-right: auto;
   font-size: 1.5rem;
   font-weight: 700;
   background-image: var(--logo-gradient);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .nav {
@@ -43,4 +49,23 @@
 
 .nav a:hover {
   color: var(--nav-link-hover-color);
+}
+
+.aboutModalContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutModalContent h2 {
+  margin: 0;
+}
+
+.aboutModalContent p {
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+.modalButton {
+  margin-top: 1.5rem;
+  align-self: center;
 }
