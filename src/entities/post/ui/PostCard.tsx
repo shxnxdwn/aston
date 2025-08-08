@@ -2,9 +2,9 @@ import styles from './PostCard.module.css';
 
 
 type PostCardProps = {
-  id: number;
-  title: string;
-  body: string;
+  id: number,
+  title: string,
+  body: string
 };
 
 

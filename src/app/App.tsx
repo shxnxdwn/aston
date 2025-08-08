@@ -1,6 +1,7 @@
 import './styles/index.css';
 import {useEffect} from 'react';
 import useTheme from '../shared/lib/theme/UseTheme.ts';
+import {Theme} from "../shared/lib/theme/ThemeContext.ts";
 import MainLayout from '../shared/layouts/MainLayout';
 import HomePage from '../pages/home';
 import LayoutHeader from '../widgets/LayoutHeader';
@@ -15,8 +16,8 @@ const App = () => {
     const rootElement = document.getElementById('root');
 
     if (rootElement) {
-      rootElement.classList.remove('theme-dark');
-      rootElement.classList.remove('theme-light');
+      rootElement.classList.remove(Theme.Dark);
+      rootElement.classList.remove(Theme.Light);
       rootElement.classList.add(theme);
     }
   }, [theme]);
