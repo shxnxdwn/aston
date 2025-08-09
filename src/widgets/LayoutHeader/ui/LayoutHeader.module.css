@@ -51,16 +51,16 @@
   color: var(--nav-link-hover-color);
 }
 
-.aboutModalContent {
+.modalContent {
   display: flex;
   flex-direction: column;
 }
 
-.aboutModalContent h2 {
+.modalContent h2 {
   margin: 0;
 }
 
-.aboutModalContent p {
+.modalContent p {
   margin-top: 1rem;
   line-height: 1.6;
 }

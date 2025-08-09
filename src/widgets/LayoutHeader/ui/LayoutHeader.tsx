@@ -34,7 +34,7 @@ const LayoutHeader = () => {
       </header>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <div className={styles.aboutModalContent}>
+        <div className={styles.modalContent}>
           <h2>О проекте</h2>
           <p>Учебное приложение для обучения на курсе Aston. Создано на TS + React + Vite</p>
           <Button
