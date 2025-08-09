@@ -1,5 +1,5 @@
 import styles from './Modal.module.css';
-import React, { type ReactNode, useEffect, useRef } from 'react';
+import {type ReactNode, type KeyboardEvent, useEffect, useRef} from 'react';
 import ReactDOM from 'react-dom';
 
 
@@ -20,7 +20,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     }
   }, [isOpen]);
 
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
 
     if (event.key === 'Escape' || event.key === 'Esc') {
       onClose();

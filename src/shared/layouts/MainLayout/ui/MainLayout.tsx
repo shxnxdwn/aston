@@ -1,11 +1,11 @@
-import React from 'react';
+import {type ReactNode} from 'react';
 import styles from './MainLayout.module.css';
 
 
 type MainLayoutProps = {
-  children: React.ReactNode;
-  header: React.ReactNode;
-  footer: React.ReactNode;
+  children: ReactNode;
+  header: ReactNode;
+  footer: ReactNode;
 };
 
 

@@ -1,3 +1,1 @@
-import Button from './ui/Button.tsx';
-
-export default Button;
+export {default} from './ui/Button';

@@ -1,3 +1,1 @@
-import LayoutHeader from './ui/LayoutHeader.tsx';
-
-export default LayoutHeader;
+export {default} from './ui/LayoutHeader';

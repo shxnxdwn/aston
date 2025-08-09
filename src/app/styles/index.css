@@ -12,6 +12,7 @@ a {
 }
 
 body {
+  --container-width: 1200px;
   --bg-primary: #111111;
   --text-primary: #FAFAFA;
   --text-secondary: #888888;

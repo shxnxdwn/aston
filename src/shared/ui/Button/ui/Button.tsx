@@ -1,5 +1,5 @@
 import styles from './Button.module.css';
-import type {ButtonHTMLAttributes, ReactNode} from 'react';
+import {type ButtonHTMLAttributes, type ReactNode, memo} from 'react';
 
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,7 +9,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 
-const Button = ({ children, variant = 'primary', className = '', ...props }: ButtonProps) => {
+const Button = memo(({ children, variant = 'primary', className = '', ...props }: ButtonProps) => {
 
   const buttonClass = `${styles.button} ${styles[variant]} ${className}`;
 
@@ -18,7 +18,7 @@ const Button = ({ children, variant = 'primary', className = '', ...props }: But
       {children}
     </button>
   );
-};
+});
 
 
 export default Button;

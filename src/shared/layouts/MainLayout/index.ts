@@ -1,3 +1,1 @@
-import MainLayout from './ui/MainLayout.tsx';
-
-export default MainLayout;
+export {default} from './ui/MainLayout.tsx';

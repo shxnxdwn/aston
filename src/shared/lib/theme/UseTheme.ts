@@ -1,4 +1,4 @@
-import {useContext} from 'react';
+import {useCallback, useContext} from 'react';
 import {type ThemeType, type ThemeContextType, Theme, ThemeContext} from './ThemeContext';
 
 
@@ -14,7 +14,7 @@ const useTheme: useThemeType = () => {
 
   const {theme, setTheme} = useContext<ThemeContextType>(ThemeContext);
 
-  const changeTheme = () => {
+  const changeTheme = useCallback(() => {
 
     if (!setTheme) {
       console.warn('No setTheme in ThemeContext');
@@ -22,7 +22,7 @@ const useTheme: useThemeType = () => {
     }
 
     setTheme(theme === Theme.Dark ? Theme.Light : Theme.Dark);
-  };
+  }, [theme, setTheme]);
 
   return {
     theme: theme || Theme.Dark,
