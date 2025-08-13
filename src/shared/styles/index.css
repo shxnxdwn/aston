@@ -11,7 +11,7 @@ a {
   text-decoration: none;
 }
 
-body {
+:root {
   --container-width: 1200px;
   --bg-primary: #111111;
   --text-primary: #FAFAFA;
@@ -30,15 +30,9 @@ body {
   --footer-border: #333333;
   --footer-text-color: #888888;
   --switcher-bg: #333333;
-
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  min-height: 100vh;
 }
 
-body.theme-light {
+:root[data-theme="theme-light"] {
   --bg-primary: #F5F5F7;
   --text-primary: #111111;
   --text-secondary: #777777;
@@ -56,6 +50,14 @@ body.theme-light {
   --footer-border: #E5E5E5;
   --footer-text-color: #888888;
   --switcher-bg: #СССССС;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
 #root {

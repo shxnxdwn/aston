@@ -1,13 +1,11 @@
 import {type ReactNode, useMemo, useState} from 'react';
-import {type ThemeType, Theme, ThemeContext} from './ThemeContext';
+import {type ThemeType, DEFAULT_THEME} from '../../constants/constants.ts';
+import { ThemeContext } from './ThemeContext.ts';
 
 
 type ThemeProviderProps = {
   children: ReactNode
 };
-
-
-const DEFAULT_THEME = Theme.Dark;
 
 
 const ThemeProvider = (props: ThemeProviderProps) => {

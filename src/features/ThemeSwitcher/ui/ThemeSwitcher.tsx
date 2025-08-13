@@ -1,6 +1,6 @@
 import styles from './ThemeSwitcher.module.css';
 import useTheme from '../../../shared/lib/theme/UseTheme.ts';
-import {Theme} from '../../../shared/lib/theme/ThemeContext';
+import {Theme} from '../../../shared/constants/constants.ts';
 
 
 const ThemeSwitcher = () => {

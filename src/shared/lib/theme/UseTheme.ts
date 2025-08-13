@@ -1,5 +1,6 @@
 import {useCallback, useContext} from 'react';
-import {type ThemeType, type ThemeContextType, Theme, ThemeContext} from './ThemeContext';
+import {type ThemeContextType, ThemeContext} from './ThemeContext';
+import {type ThemeType, Theme} from '../../constants/constants.ts';
 
 
 type UseThemeResultType = {
