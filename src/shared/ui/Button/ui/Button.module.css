@@ -1,0 +1,32 @@
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.primary {
+  background-color: var(--link-color);
+  color: var(--bg-primary);
+  border-color: var(--link-color);
+}
+
+.primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--nav-link-color);
+  border-color: var(--card-border);
+}
+
+.ghost:hover {
+  color: var(--nav-link-hover-color);
+  border-color: var(--nav-link-hover-color);
+  background-color: rgba(128, 128, 128, 0.1);
+}

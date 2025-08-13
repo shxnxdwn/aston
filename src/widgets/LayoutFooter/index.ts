@@ -1,4 +1,1 @@
-import LayoutFooter from './ui/LayoutFooter.tsx';
-
-
-export default LayoutFooter;
+export {default} from './ui/LayoutFooter';

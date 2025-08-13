@@ -1,4 +1,1 @@
-import PostCard from './ui/PostCard.tsx';
-
-
-export default PostCard;
+export {default} from './ui/PostCard';
