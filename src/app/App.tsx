@@ -1,4 +1,4 @@
-import './styles/index.css';
+import '../shared/styles/index.css';
 import {useEffect} from 'react';
 import useTheme from '../shared/lib/theme/UseTheme.ts';
 import {Theme} from "../shared/lib/theme/ThemeContext.ts";

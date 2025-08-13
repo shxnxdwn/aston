@@ -11,10 +11,10 @@ type PostCardProps = {
 const PostCard = ({ id, title, body }: PostCardProps) => {
   return (
     <article className={styles.card}>
-      <div className={styles.header}>
+      <header className={styles.header}>
         <span className={styles.id}>#{id}</span>
         <h3 className={styles.title}>{title}</h3>
-      </div>
+      </header>
       <p className={styles.body}>{body}</p>
       <a href="#" className={styles.link}>Читать далее</a>
     </article>
