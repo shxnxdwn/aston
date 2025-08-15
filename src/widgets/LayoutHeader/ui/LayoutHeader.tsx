@@ -35,15 +35,21 @@ const LayoutHeader = () => {
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>
         <div className={styles.modalContent}>
-          <h2>О проекте</h2>
-          <p>Учебное приложение для обучения на курсе Aston. Создано на TS + React + Vite</p>
-          <Button
-            variant="primary"
-            onClick={closeModal}
-            className={styles.modalButton}
-          >
-            ОК
-          </Button>
+          <Modal.Header>
+            <h2>О проекте</h2>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Учебное приложение для обучения на курсе Aston. Создано на TS + React + Vite</p>
+          </Modal.Body>
+          <Modal.Footer className={styles.modalFooter}>
+            <Button
+              variant="primary"
+              onClick={closeModal}
+              className={styles.modalButton}
+            >
+              ОК
+            </Button>
+          </Modal.Footer>
         </div>
       </Modal>
     </>

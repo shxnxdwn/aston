@@ -1,6 +1,9 @@
 import styles from './Modal.module.css';
 import {type ReactNode, type KeyboardEvent, useEffect, useRef} from 'react';
 import ReactDOM from 'react-dom';
+import ModalHeader from './ModalHeader.tsx';
+import ModalBody from './ModalBody.tsx';
+import ModalFooter from './ModalFooter.tsx';
 
 
 type ModalProps = {
@@ -46,6 +49,10 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     document.getElementById('modal-root')!
   );
 };
+
+Modal.Header = ModalHeader;
+Modal.Body = ModalBody;
+Modal.Footer = ModalFooter;
 
 
 export default Modal;
