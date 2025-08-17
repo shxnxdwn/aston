@@ -18,6 +18,7 @@ const App = () => {
     <MainLayout header={<LayoutHeader />} footer={<LayoutFooter />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/posts/:id" element={<PostPage />} />
       </Routes>
     </MainLayout>
   );
