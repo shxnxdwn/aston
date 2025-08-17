@@ -1,31 +1,22 @@
 import styles from './PostList.module.css';
-import type {Post} from '../../../shared/constants/constants.ts';
-import PostCard from '../../../entities/post';
-import withLoading from '../../../shared/lib/hoc/withLoading.tsx';
-
+import withLoading from '@/shared/lib/hoc/withLoading.tsx';
+import { type PostType } from '@/entities/Post';
+import Post from '@/entities/Post';
 
 type PostListProps = {
-  posts: Post[]
+  posts: PostType[];
 };
 
-
-const PostList = ({posts}: PostListProps) => {
+const PostList = ({ posts }: PostListProps) => {
   return (
     <section className={styles.postList}>
       {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          body={post.body}
-        />
+        <Post key={post.id} id={post.id} title={post.title} body={post.body} />
       ))}
     </section>
   );
 };
 
-
 const PostListWithLoading = withLoading(PostList);
-
 
 export default PostListWithLoading;

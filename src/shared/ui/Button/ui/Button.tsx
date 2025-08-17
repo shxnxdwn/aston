@@ -1,16 +1,13 @@
 import styles from './Button.module.css';
-import {type ButtonHTMLAttributes, type ReactNode, memo} from 'react';
-
+import { type ButtonHTMLAttributes, memo, type ReactNode } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: 'primary' | 'ghost';
-  className?: string
+  className?: string;
 }
 
-
 const Button = memo(({ children, variant = 'primary', className = '', ...props }: ButtonProps) => {
-
   const buttonClass = `${styles.button} ${styles[variant]} ${className}`;
 
   return (
@@ -19,6 +16,5 @@ const Button = memo(({ children, variant = 'primary', className = '', ...props }
     </button>
   );
 });
-
 
 export default Button;

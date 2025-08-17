@@ -1,14 +1,12 @@
-import styles from './PostCard.module.css';
+import styles from './Post.module.css';
 
-
-type PostCardProps = {
-  id: number,
-  title: string,
-  body: string
+type PostProps = {
+  id: number;
+  title: string;
+  body: string;
 };
 
-
-const PostCard = ({ id, title, body }: PostCardProps) => {
+const Post = ({ id, title, body }: PostProps) => {
   return (
     <article className={styles.card}>
       <header className={styles.header}>
@@ -16,10 +14,11 @@ const PostCard = ({ id, title, body }: PostCardProps) => {
         <h3 className={styles.title}>{title}</h3>
       </header>
       <p className={styles.body}>{body}</p>
-      <a href="#" className={styles.link}>Читать далее</a>
+      <a href="#" className={styles.link}>
+        Читать далее
+      </a>
     </article>
   );
 };
 
-
-export default PostCard;
+export default Post;

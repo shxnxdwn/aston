@@ -1,15 +1,14 @@
-import '../shared/styles/index.css';
-import {useEffect} from 'react';
-import useTheme from '../shared/lib/theme/UseTheme.ts';
-import MainLayout from '../shared/layouts/MainLayout';
-import HomePage from '../pages/home';
-import LayoutHeader from '../widgets/LayoutHeader';
-import LayoutFooter from '../widgets/LayoutFooter';
-
+import '@/shared/styles/index.css';
+import { useEffect } from 'react';
+import { Route, Routes } from 'react-router';
+import useTheme from '@/shared/lib/theme/UseTheme.ts';
+import LayoutHeader from '@/widgets/LayoutHeader';
+import LayoutFooter from '@/widgets/LayoutFooter';
+import MainLayout from '@/shared/layouts/MainLayout';
+import HomePage from '@/pages/HomePage';
 
 const App = () => {
-
-  const {theme} = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
     document.documentElement.dataset.theme = `${theme}`;
@@ -17,10 +16,11 @@ const App = () => {
 
   return (
     <MainLayout header={<LayoutHeader />} footer={<LayoutFooter />}>
-      <HomePage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </MainLayout>
-  )
+  );
 };
-
 
 export default App;

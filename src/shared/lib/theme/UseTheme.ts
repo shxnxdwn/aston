@@ -1,22 +1,17 @@
-import {useCallback, useContext} from 'react';
-import {type ThemeContextType, ThemeContext} from './ThemeContext';
-import {type ThemeType, Theme} from '../../constants/constants.ts';
-
+import { useCallback, useContext } from 'react';
+import { type ThemeContextType, type ThemeType, Theme, ThemeContext } from './ThemeContext';
 
 type UseThemeResultType = {
-  theme: ThemeType,
-  changeTheme: () => void
+  theme: ThemeType;
+  changeTheme: () => void;
 };
 
 type useThemeType = () => UseThemeResultType;
 
-
 const useTheme: useThemeType = () => {
-
-  const {theme, setTheme} = useContext<ThemeContextType>(ThemeContext);
+  const { theme, setTheme } = useContext<ThemeContextType>(ThemeContext);
 
   const changeTheme = useCallback(() => {
-
     if (!setTheme) {
       console.warn('No setTheme in ThemeContext');
       return;
@@ -27,9 +22,8 @@ const useTheme: useThemeType = () => {
 
   return {
     theme: theme || Theme.Dark,
-    changeTheme,
+    changeTheme
   };
 };
-
 
 export default useTheme;
