@@ -1,18 +1,11 @@
-import type {ReactNode} from 'react';
-
+import type { ReactNode } from 'react';
 
 type ModalHeaderProps = {
-  children: ReactNode
+  children: ReactNode;
 };
 
-
-const ModalHeader = ({children} : ModalHeaderProps) => {
-  return (
-    <header>
-      {children}
-    </header>
-  );
+const ModalHeader = ({ children }: ModalHeaderProps) => {
+  return <header>{children}</header>;
 };
-
 
 export default ModalHeader;

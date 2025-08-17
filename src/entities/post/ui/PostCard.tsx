@@ -1,12 +1,10 @@
 import styles from './PostCard.module.css';
 
-
 type PostCardProps = {
-  id: number,
-  title: string,
-  body: string
+  id: number;
+  title: string;
+  body: string;
 };
-
 
 const PostCard = ({ id, title, body }: PostCardProps) => {
   return (
@@ -16,10 +14,11 @@ const PostCard = ({ id, title, body }: PostCardProps) => {
         <h3 className={styles.title}>{title}</h3>
       </header>
       <p className={styles.body}>{body}</p>
-      <a href="#" className={styles.link}>Читать далее</a>
+      <a href="#" className={styles.link}>
+        Читать далее
+      </a>
     </article>
   );
 };
-
 
 export default PostCard;

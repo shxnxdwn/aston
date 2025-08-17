@@ -1,1 +1,1 @@
-export {default} from './ui/LayoutHeader';
+export { default } from './ui/LayoutHeader';

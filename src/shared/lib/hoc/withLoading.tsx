@@ -1,25 +1,20 @@
-import type {ComponentType} from 'react';
+import type { ComponentType } from 'react';
 import Loader from '../../ui/Loader';
 
-
 type WithLoadingProps = {
-  isLoading: boolean
+  isLoading: boolean;
 };
-
 
 const withLoading = <P extends object>(WrappedComponent: ComponentType<P>) => {
-
   return (props: P & WithLoadingProps) => {
-
-    const {isLoading, ...restProps} = props;
+    const { isLoading, ...restProps } = props;
 
     if (isLoading) {
-      return <Loader/>;
+      return <Loader />;
     }
 
-    return <WrappedComponent {...restProps as P} />
+    return <WrappedComponent {...(restProps as P)} />;
   };
 };
-
 
 export default withLoading;
