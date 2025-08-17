@@ -1,14 +1,17 @@
 import styles from './HomePage.module.css';
-import { useEffect, useState } from 'react';
-import PostListWithLoading from '../../../widgets/PostList';
+import { useEffect, useMemo, useState } from 'react';
+import { PostLengthFilter, filterByLength, type LengthFilterType } from '@/features/PostLengthFilter';
 import { getPosts, type PostType } from '@/entities/Post';
+import PostListWithLoading from '@/widgets/PostList';
 
 const HomePage = () => {
   const [posts, setPosts] = useState<PostType[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState<LengthFilterType>('all');
 
   useEffect(() => {
     const loadPosts = async () => {
+      setIsLoading(true);
       try {
         const loadedPosts = await getPosts();
         setPosts(loadedPosts);
@@ -22,11 +25,14 @@ const HomePage = () => {
     void loadPosts();
   }, []);
 
+  const filteredPosts = useMemo(() => filterByLength(posts, activeFilter), [posts, activeFilter]);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Лента постов</h1>
+      <PostLengthFilter className={styles.filter} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <div className={styles.contentWrapper}>
-        <PostListWithLoading isLoading={isLoading} posts={posts} />
+        <PostListWithLoading isLoading={isLoading} posts={filteredPosts} />
       </div>
     </div>
   );

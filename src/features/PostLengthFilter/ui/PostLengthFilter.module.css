@@ -1,0 +1,5 @@
+.filterContainer {
+  display: flex;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
