@@ -1,11 +1,12 @@
 import styles from './Post.module.css';
+import { Link } from 'react-router-dom';
 
 type PostProps = {
+  userId?: number;
   id: number;
   title: string;
   body: string;
 };
-
 const Post = ({ id, title, body }: PostProps) => {
   return (
     <article className={styles.card}>
@@ -14,11 +15,10 @@ const Post = ({ id, title, body }: PostProps) => {
         <h3 className={styles.title}>{title}</h3>
       </header>
       <p className={styles.body}>{body}</p>
-      <a href="#" className={styles.link}>
+      <Link to={`/posts/${id}`} className={styles.link}>
         Читать далее
-      </a>
+      </Link>
     </article>
   );
 };
-
 export default Post;

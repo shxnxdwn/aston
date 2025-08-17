@@ -6,6 +6,7 @@ import LayoutHeader from '@/widgets/LayoutHeader';
 import LayoutFooter from '@/widgets/LayoutFooter';
 import MainLayout from '@/shared/layouts/MainLayout';
 import HomePage from '@/pages/HomePage';
+import PostPage from '@/pages/PostPage';
 
 const App = () => {
   const { theme } = useTheme();
