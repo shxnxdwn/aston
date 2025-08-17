@@ -36,7 +36,7 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
         {children}
       </div>
     </div>,
-    document.getElementById('modal-root')!,
+    document.getElementById('modal-root')!
   );
 };
 

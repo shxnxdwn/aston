@@ -1,7 +1,6 @@
 import styles from './PostList.module.css';
 import withLoading from '@/shared/lib/hoc/withLoading.tsx';
-import { type PostType } from '@/entities/Post';
-import Post from '@/entities/Post';
+import Post, { type PostType } from '@/entities/Post';
 
 type PostListProps = {
   posts: PostType[];
