@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import ThemeSwitcher from '@/features/ThemeSwitcher';
 import Button from '@/shared/ui/Button';
 import Modal from '@/shared/ui/Modal';
+import { Link } from 'react-router-dom';
 
 const LayoutHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -19,12 +20,12 @@ const LayoutHeader = () => {
     <>
       <header className={styles.header}>
         <div className={styles.container}>
-          <a href="#" className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             Aston App
-          </a>
+          </Link>
           <div className={styles.controls}>
             <nav className={styles.nav}>
-              <a href="#">Главная</a>
+              <Link to="/">Главная</Link>
             </nav>
             <Button variant="ghost" onClick={openModal}>
               О проекте
