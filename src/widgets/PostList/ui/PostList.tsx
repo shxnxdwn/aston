@@ -18,4 +18,4 @@ const PostList = ({ posts }: PostListProps) => {
 
 const PostListWithLoading = withLoading(PostList);
 
-export default PostListWithLoading;
+export { PostListWithLoading as PostList };
