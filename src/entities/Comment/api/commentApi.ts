@@ -1,4 +1,4 @@
-import apiService from '@/shared/api/apiService.ts';
+import apiService from '@/shared/api/apiService';
 import type { CommentType } from '../model/types';
 
 const getComments = (): Promise<CommentType[]> => apiService<CommentType[]>('comments');

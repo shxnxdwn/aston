@@ -1,3 +1,3 @@
 export type { PostType } from './model/types';
 export { default } from './ui/Post';
-export { getPosts, getPostById } from './api/postApi.ts';
+export { getPosts, getPostById, getPostsByUserId } from './api/postApi';

@@ -1,5 +1,11 @@
 .filterContainer {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   padding-top: 1.5rem;
+}
+
+.filterButtonContainer {
+  display: flex;
+  gap: 1rem;
 }

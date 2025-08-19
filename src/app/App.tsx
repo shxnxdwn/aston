@@ -1,6 +1,6 @@
 import '@/shared/styles/index.css';
 import { useEffect } from 'react';
-import useTheme from '@/shared/lib/theme/UseTheme.ts';
+import useTheme from '@/shared/lib/theme/UseTheme';
 import AppRouter from './providers/router/AppRouter';
 
 const App = () => {

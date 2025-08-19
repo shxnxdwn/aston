@@ -25,7 +25,10 @@ const LayoutHeader = () => {
           </Link>
           <div className={styles.controls}>
             <nav className={styles.nav}>
-              <Link to="/">Главная</Link>
+              <Link to="/posts">Посты</Link>
+              <Link to="/albums">Альбомы</Link>
+              <Link to="/todos">Задачи</Link>
+              <Link to="/users">Пользователи</Link>
             </nav>
             <Button variant="ghost" onClick={openModal}>
               О проекте
