@@ -1,1 +1,1 @@
-export { default } from '@/widgets/PostInfo/ui/PostInfo.tsx';
+export { default } from './ui/PostInfo';

@@ -9,7 +9,7 @@ const PostInfo = ({ post }: PostInfoProps) => {
   return (
     <article className={styles.postInfo}>
       <header className={styles.header}>
-        <h1 className={styles.title}>{post.title}</h1>
+        <h2 className={styles.title}>{post.title}</h2>
       </header>
       <p className={styles.body}>{post.body}</p>
     </article>

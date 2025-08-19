@@ -5,7 +5,6 @@ type AlbumProps = {
   userId?: number;
   id: number;
   title: string;
-  body: string;
 };
 
 const Album = ({ id, title }: AlbumProps) => {

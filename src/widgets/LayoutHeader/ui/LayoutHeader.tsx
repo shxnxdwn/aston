@@ -1,9 +1,9 @@
 import styles from './LayoutHeader.module.css';
 import { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ThemeSwitcher from '@/features/ThemeSwitcher';
 import Button from '@/shared/ui/Button';
 import Modal from '@/shared/ui/Modal';
-import { Link } from 'react-router-dom';
 
 const LayoutHeader = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
