@@ -11,7 +11,7 @@ const Post = ({ id, title, body }: PostProps) => {
   return (
     <article className={styles.card}>
       <header className={styles.header}>
-        <span className={styles.id}>#{id}</span>
+        <span className={styles.id}>Пост #{id}</span>
         <h3 className={styles.title}>{title}</h3>
       </header>
       <p className={styles.body}>{body}</p>

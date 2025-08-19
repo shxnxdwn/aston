@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Loader from '@/shared/ui/Loader';
 import PostInfo from '@/widgets/PostInfo';
 import CommentsToggler from '@/features/CommentsToggler';
-import { usePostDetail } from '@/hooks/usePostDetail';
+import usePostDetail from '@/pages/PostDetail/model/hooks/usePostDetail.ts';
 
 const PostDetail = () => {
   const { id } = useParams<{ id: string }>();
