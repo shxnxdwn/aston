@@ -19,7 +19,7 @@ const Posts = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Лента постов</h1>
+      <h1 className={styles.title}>Посты</h1>
       <PostLengthFilter className={styles.filter} activeFilter={activeFilter} onFilterChange={setActiveFilter} />
       <div className={styles.contentWrapper}>
         <PostList isLoading={isLoading} posts={filteredPosts} />

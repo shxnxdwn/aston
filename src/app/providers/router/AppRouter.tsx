@@ -4,6 +4,9 @@ import LayoutHeader from '@/widgets/LayoutHeader';
 import LayoutFooter from '@/widgets/LayoutFooter';
 import Posts from '@/pages/Posts';
 import PostDetail from '@/pages/PostDetail';
+import Albums from '@/pages/Albums';
+import Todos from '@/pages/Todos';
+import Users from '@/pages/Users';
 
 const AppRouter = () => {
   return (
@@ -14,13 +17,10 @@ const AppRouter = () => {
         <Route path="/posts/:id" element={<PostDetail />} />
 
         <Route path="/albums" element={<Albums />} />
-        <Route path="/albums/:id" element={<AlbumDetail />} />
 
         <Route path="/todos/" element={<Todos />} />
-        <Route path="/todos/:id" element={<TodoDetail />} />
 
         <Route path="/users/" element={<Users />} />
-        <Route path="/users/:id" element={<UserDetail />} />
 
         <Route path="*" element={<div>Страница не найдена</div>} />
       </Routes>
@@ -29,3 +29,7 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
+
+// <Route path="/albums/:id" element={<AlbumDetail />} />
+// <Route path="/todos/:id" element={<TodoDetail />} />
+// <Route path="/users/:id" element={<UserDetail />} />
