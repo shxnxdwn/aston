@@ -9,9 +9,9 @@ const TodoInfo = ({ todo }: TodoInfoProps) => {
   return (
     <article className={styles.todoInfo}>
       <header className={styles.header}>
-        <h2 className={styles.title}>{todo.title}</h2>
+        <h1 className={styles.title}>{todo.title}</h1>
       </header>
-      <p className={styles.completed}>{todo.completed}</p>
+      <p className={styles.completed}>{todo.completed ? 'Выполнена' : 'Не выполнена'}</p>
     </article>
   );
 };

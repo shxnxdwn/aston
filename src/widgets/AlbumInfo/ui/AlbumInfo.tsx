@@ -9,7 +9,8 @@ const AlbumInfo = ({ album }: AlbumInfoProps) => {
   return (
     <article className={styles.albumInfo}>
       <header className={styles.header}>
-        <h2 className={styles.title}>{album.title}</h2>
+        <h1 className={styles.title}>{album.title}</h1>
+        <p className={styles.text}>Место для фотографий</p>
       </header>
     </article>
   );

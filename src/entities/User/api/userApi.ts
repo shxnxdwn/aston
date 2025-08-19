@@ -3,6 +3,6 @@ import apiService from '@/shared/api/apiService.ts';
 
 const getUsers = (): Promise<UserType[]> => apiService<UserType[]>('users');
 
-const getUser = (id: string): Promise<UserType[]> => apiService<UserType[]>(`users/${id}`);
+const getUserById = (id: number): Promise<UserType> => apiService<UserType>(`users/${id}`);
 
-export { getUser, getUsers };
+export { getUserById, getUsers };

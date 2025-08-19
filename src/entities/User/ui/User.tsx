@@ -17,7 +17,7 @@ const User = ({ id, name, username, email }: UserProps) => {
         <p className={styles.name}>{name}</p>
         <p className={styles.email}>{email}</p>
       </div>
-      <Link to={`/todos/${id}`} className={styles.link}>
+      <Link to={`/users/${id}`} className={styles.link}>
         Профиль пользователя
       </Link>
     </article>

@@ -18,3 +18,7 @@
   color: var(--text-primary);
   text-transform: capitalize;
 }
+
+.text {
+  padding-top: 2rem;
+}

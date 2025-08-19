@@ -8,6 +8,8 @@ import Albums from '@/pages/Albums';
 import Todos from '@/pages/Todos';
 import Users from '@/pages/Users';
 import AlbumDetail from '@/pages/AlbumDetail';
+import TodoDetail from '@/pages/TodoDetail';
+import UserDetail from '@/pages/UserDetail/ui/UserDetail.tsx';
 
 const AppRouter = () => {
   return (
@@ -21,8 +23,10 @@ const AppRouter = () => {
         <Route path="/albums/:id" element={<AlbumDetail />} />
 
         <Route path="/todos/" element={<Todos />} />
+        <Route path="/todos/:id" element={<TodoDetail />} />
 
         <Route path="/users/" element={<Users />} />
+        <Route path="/users/:id" element={<UserDetail />} />
 
         <Route path="*" element={<div>Страница не найдена</div>} />
       </Routes>
@@ -31,6 +35,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-
-// <Route path="/todos/:id" element={<TodoDetail />} />
-// <Route path="/users/:id" element={<UserDetail />} />

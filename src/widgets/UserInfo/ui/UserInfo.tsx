@@ -7,12 +7,12 @@ type UserInfoProps = {
 
 const UserInfo = ({ user }: UserInfoProps) => {
   return (
-    <article className={styles.albumInfo}>
+    <article className={styles.userInfo}>
       <header className={styles.header}>
         <h2 className={styles.title}>{user.username}</h2>
       </header>
-      <p className={styles.text}>{user.name}</p>
-      <p className={styles.text}>{user.email}</p>
+      <p className={styles.name}>{user.name}</p>
+      <p className={styles.email}>{user.email}</p>
     </article>
   );
 };
