@@ -1,8 +1,9 @@
 import styles from './UserDetail.module.css';
-import { useParams } from 'react-router-dom';
-import useUserDetail from '../model/hooks/useUserDetail';
+import { useParams, Outlet } from 'react-router-dom';
 import Loader from '@/shared/ui/Loader';
 import UserInfo from '@/widgets/UserInfo';
+import UserTabs from '@/widgets/UserTabs';
+import useUserDetail from '@/pages/UserDetail/model/hooks/useUserDetail';
 
 const UserDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -23,6 +24,10 @@ const UserDetail = () => {
   return (
     <div className={styles.userPage}>
       <UserInfo user={user} />
+      <UserTabs />
+      <main className={styles.content}>
+        <Outlet />
+      </main>
     </div>
   );
 };
