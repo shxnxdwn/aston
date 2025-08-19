@@ -18,16 +18,12 @@ const AppRouter = () => {
         <Route path="/" element={<Navigate to="/posts" replace />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/posts/:id" element={<PostDetail />} />
-
         <Route path="/albums" element={<Albums />} />
         <Route path="/albums/:id" element={<AlbumDetail />} />
-
         <Route path="/todos/" element={<Todos />} />
         <Route path="/todos/:id" element={<TodoDetail />} />
-
         <Route path="/users/" element={<Users />} />
         <Route path="/users/:id" element={<UserDetail />} />
-
         <Route path="*" element={<div>Страница не найдена</div>} />
       </Routes>
     </MainLayout>
