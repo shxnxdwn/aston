@@ -1,0 +1,32 @@
+.tabsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--nav-link-color);
+  border: 1px solid var(--card-border);
+}
+
+.tab:hover {
+  color: var(--nav-link-hover-color);
+  border-color: var(--nav-link-hover-color);
+}
+
+.active {
+  background-color: var(--link-color);
+  color: var(--bg-primary);
+  border-color: var(--link-color);
+}

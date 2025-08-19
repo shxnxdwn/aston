@@ -1,0 +1,55 @@
+.comment {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.comment:hover {
+  border-color: var(--card-hover-border);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.email {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.id {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+
+.body {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,32 @@
+.commentsSection {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.commentsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.commentsTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.commentsWrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.4s ease-in-out;
+}
+
+.commentsWrapper.visible {
+  grid-template-rows: 1fr;
+}
+
+.commentListContainer {
+  min-height: 0;
+}
