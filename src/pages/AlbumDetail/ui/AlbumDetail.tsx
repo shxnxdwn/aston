@@ -23,6 +23,7 @@ const AlbumDetail = () => {
   return (
     <div className={styles.albumPage}>
       <AlbumInfo album={album} />
+      <p className={styles.text}>Место для фотографий</p>
     </div>
   );
 };

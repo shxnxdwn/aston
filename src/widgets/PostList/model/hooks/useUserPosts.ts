@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getPostsByUserId } from '@/entities/Post/api/postApi';
 import type { PostType } from '@/entities/Post/model/types';
 

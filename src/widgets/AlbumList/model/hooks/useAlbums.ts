@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAlbums, type AlbumType } from '@/entities/Album';
+import { type AlbumType, getAlbums } from '@/entities/Album';
 
 const useAlbums = () => {
   const [albums, setAlbums] = useState<AlbumType[]>([]);

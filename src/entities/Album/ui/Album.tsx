@@ -14,7 +14,7 @@ const Album = ({ id, title }: AlbumProps) => {
         <span className={styles.id}>Альбом #{id}</span>
         <h3 className={styles.title}>{title}</h3>
       </div>
-      <Link to={`/albums/${id}/photos`} className={styles.link}>
+      <Link to={`/albums/${id}`} className={styles.link}>
         Посмотреть альбом
       </Link>
     </article>
