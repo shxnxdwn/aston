@@ -1,5 +1,5 @@
 import styles from './UserDetail.module.css';
-import { useParams, Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import Loader from '@/shared/ui/Loader';
 import UserInfo from '@/widgets/UserInfo';
 import UserTabs from '@/widgets/UserTabs';

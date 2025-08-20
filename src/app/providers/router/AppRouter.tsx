@@ -9,10 +9,7 @@ import Todos from '@/pages/Todos';
 import Users from '@/pages/Users';
 import AlbumDetail from '@/pages/AlbumDetail';
 import TodoDetail from '@/pages/TodoDetail';
-import UserDetail from '@/pages/UserDetail/ui/UserDetail';
-import UserPosts from '@/pages/UserDetail/ui/UserPosts';
-import UserAlbums from '@/pages/UserDetail/ui/UserAlbums';
-import UserTodos from '@/pages/UserDetail/ui/UserTodos';
+import UserDetail, { UserAlbums, UserPosts, UserTodos } from '@/pages/UserDetail';
 
 const AppRouter = () => {
   return (
