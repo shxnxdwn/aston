@@ -1,6 +1,5 @@
 import styles from './LayoutFooter.module.css';
 
-
 const LayoutFooter = () => {
   return (
     <footer className={styles.footer}>
@@ -10,6 +9,5 @@ const LayoutFooter = () => {
     </footer>
   );
 };
-
 
 export default LayoutFooter;

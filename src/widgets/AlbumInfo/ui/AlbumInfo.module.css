@@ -1,0 +1,24 @@
+.albumInfo {
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  background-color: var(--card-bg);
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.text {
+  padding-top: 2rem;
+}

@@ -28,5 +28,4 @@
 .ghost:hover {
   color: var(--nav-link-hover-color);
   border-color: var(--nav-link-hover-color);
-  background-color: rgba(128, 128, 128, 0.1);
 }
