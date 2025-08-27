@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAlbumsByUserId, type AlbumType } from '@/entities/Album';
+import { type AlbumType, getAlbumsByUserId } from '@/entities/Album';
 
 const useUserAlbums = (userId: string | undefined) => {
   const [albums, setAlbums] = useState<AlbumType[]>([]);

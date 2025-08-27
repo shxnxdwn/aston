@@ -10,7 +10,7 @@ const AlbumInfo = ({ album }: AlbumInfoProps) => {
     <article className={styles.albumInfo}>
       <header className={styles.header}>
         <h1 className={styles.title}>{album.title}</h1>
-        <p className={styles.text}>Место для фотографий</p>
+        <p className={styles.text}>Информация об альбоме</p>
       </header>
     </article>
   );

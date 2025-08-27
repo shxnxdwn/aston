@@ -1,5 +1,5 @@
 import styles from './AlbumDetail.module.css';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useAlbumDetail from '../model/hooks/useAlbumDetail';
 import Loader from '@/shared/ui/Loader';
 import AlbumInfo from '@/widgets/AlbumInfo';
@@ -23,6 +23,9 @@ const AlbumDetail = () => {
   return (
     <div className={styles.albumPage}>
       <AlbumInfo album={album} />
+      <Link to={`/albums/${id}/photos`} className={styles.photosLink}>
+        Посмотреть фотографии
+      </Link>
     </div>
   );
 };

@@ -1,3 +1,3 @@
 export { TodoList } from './ui/TodoList';
-export { useTodos } from './model/hooks/useTodos';
-export { useUserTodos } from './model/hooks/useUserTodos';
+export { useTodos } from '@/entities/Todo/model/hooks/useTodos';
+export { useUserTodos } from '@/entities/Todo/model/hooks/useUserTodos';

@@ -14,3 +14,22 @@
   font-size: 1.2rem;
   color: var(--text-secondary);
 }
+
+.photosLink {
+  align-self: center;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--link-color);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background-color: var(--card-bg);
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.photosLink:hover {
+  border-color: var(--card-hover-border);
+  color: var(--card-hover-border);
+  transform: translateY(-3px);
+}

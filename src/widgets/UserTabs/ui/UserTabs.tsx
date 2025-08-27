@@ -1,5 +1,5 @@
 import styles from './UserTabs.module.css';
-import { NavLink, useParams, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useParams } from 'react-router-dom';
 
 const UserTabs = () => {
   const { id: userId } = useParams<{ id: string }>();

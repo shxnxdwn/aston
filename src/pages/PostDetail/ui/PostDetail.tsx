@@ -4,6 +4,7 @@ import Loader from '@/shared/ui/Loader';
 import PostInfo from '@/widgets/PostInfo';
 import CommentsToggler from '@/features/CommentsToggler';
 import usePostDetail from '@/pages/PostDetail/model/hooks/usePostDetail.ts';
+import CommentList from '@/widgets/CommentList';
 
 const PostDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -25,7 +26,9 @@ const PostDetail = () => {
   return (
     <div className={styles.postPage}>
       <PostInfo post={post} />
-      <CommentsToggler comments={comments} />
+      <CommentsToggler comments={comments}>
+        <CommentList comments={comments} />
+      </CommentsToggler>
     </div>
   );
 };
