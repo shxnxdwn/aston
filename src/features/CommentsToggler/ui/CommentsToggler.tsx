@@ -1,5 +1,5 @@
 import styles from './CommentsToggler.module.css';
-import { useCallback, useState } from 'react';
+import { type ReactNode, useCallback, useState } from 'react';
 import { type CommentType } from '@/entities/Comment';
 import Button from '@/shared/ui/Button';
 
