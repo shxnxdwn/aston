@@ -1,15 +1,7 @@
 import styles from './PostLengthFilter.module.css';
 import type { LengthFilterType } from '@/features/PostLengthFilter/lib/filterByLength.ts';
+import { FilterConfig, filterTypes } from '@/features/PostLengthFilter/model/config.ts';
 import Button from '@/shared/ui/Button';
-
-const FilterConfig = {
-  all: 'Все',
-  short: 'Короткие',
-  medium: 'Средние',
-  long: 'Длинные'
-} as const;
-
-const filterTypes = Object.keys(FilterConfig) as LengthFilterType[];
 
 type PostLengthFilterProps = {
   activeFilter: LengthFilterType;

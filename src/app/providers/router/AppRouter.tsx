@@ -10,6 +10,7 @@ import Users from '@/pages/Users';
 import AlbumDetail from '@/pages/AlbumDetail';
 import TodoDetail from '@/pages/TodoDetail';
 import UserDetail, { UserAlbums, UserPosts, UserTodos } from '@/pages/UserDetail';
+import AlbumPhotos from '@/pages/AlbumPhotos';
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
         <Route path="/posts/:id" element={<PostDetail />} />
         <Route path="/albums" element={<Albums />} />
         <Route path="/albums/:id" element={<AlbumDetail />} />
+        <Route path="/albums/:id/photos" element={<AlbumPhotos />} />
         <Route path="/todos/" element={<Todos />} />
         <Route path="/todos/:id" element={<TodoDetail />} />
         <Route path="/users/" element={<Users />} />
