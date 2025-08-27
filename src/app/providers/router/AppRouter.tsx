@@ -1,8 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from '@/shared/layouts/MainLayout';
-import LayoutHeader from '@/widgets/LayoutHeader';
-import LayoutFooter from '@/widgets/LayoutFooter';
 import Loader from '@/shared/ui/Loader';
 
 const Posts = lazy(() => import('@/pages/Posts'));
@@ -21,28 +19,29 @@ const UserTodos = lazy(() => import('@/pages/UserDetail').then((module) => ({ de
 
 const AppRouter = () => {
   return (
-    <MainLayout header={<LayoutHeader />} footer={<LayoutFooter />}>
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<Navigate to="/posts" replace />} />
-          <Route path="/posts" element={<Posts />} />
-          <Route path="/posts/:id" element={<PostDetail />} />
-          <Route path="/albums" element={<Albums />} />
-          <Route path="/albums/:id" element={<AlbumDetail />} />
-          <Route path="/albums/:id/photos" element={<AlbumPhotos />} />
-          <Route path="/todos/" element={<Todos />} />
-          <Route path="/todos/:id" element={<TodoDetail />} />
-          <Route path="/users/" element={<Users />} />
-          <Route path="/users/:id" element={<UserDetail />}>
+    <Suspense fallback={<Loader />}>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Navigate to="/posts" replace />} />
+          <Route path="posts" element={<Posts />} />
+          <Route path="posts/:id" element={<PostDetail />} />
+          <Route path="albums" element={<Albums />} />
+          <Route path="albums/:id" element={<AlbumDetail />} />
+          <Route path="albums/:id/photos" element={<AlbumPhotos />} />
+          <Route path="todos" element={<Todos />} />
+          <Route path="todos/:id" element={<TodoDetail />} />
+          <Route path="users" element={<Users />} />
+          <Route path="users/:id" element={<UserDetail />}>
             <Route index element={<UserPosts />} />
             <Route path="posts" element={<UserPosts />} />
             <Route path="albums" element={<UserAlbums />} />
             <Route path="todos" element={<UserTodos />} />
           </Route>
-          <Route path="*" element={<div>Страница не найдена</div>} />
-        </Routes>
-      </Suspense>
-    </MainLayout>
+        </Route>
+
+        <Route path="*" element={<div>Страница не найдена</div>} />
+      </Routes>
+    </Suspense>
   );
 };
 
