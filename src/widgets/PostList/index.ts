@@ -1,3 +1,3 @@
 export { PostList } from './ui/PostList';
-export { usePosts } from './model/hooks/usePosts';
-export { useUserPosts } from './model/hooks/useUserPosts';
+export { usePosts } from '@/entities/Post/model/hooks/usePosts';
+export { useUserPosts } from '@/entities/Post/model/hooks/useUserPosts';

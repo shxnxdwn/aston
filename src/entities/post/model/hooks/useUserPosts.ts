@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getPostsByUserId } from '@/entities/Post/api/postApi';
+import { getPostsByUserId } from '@/entities/Post/api/postApi.ts';
 import type { PostType } from '@/entities/Post/model/types';
 
 const useUserPosts = (userId?: string) => {

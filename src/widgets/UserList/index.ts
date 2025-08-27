@@ -1,2 +1,2 @@
 export { UserList } from './ui/UserList';
-export { useUsers } from './model/hooks/useUsers';
+export { useUsers } from '@/entities/User/model/hooks/useUsers';
