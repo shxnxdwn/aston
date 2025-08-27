@@ -25,7 +25,9 @@ const PostDetail = () => {
   return (
     <div className={styles.postPage}>
       <PostInfo post={post} />
-      <CommentsToggler comments={comments} />
+      <CommentsToggler comments={comments}>
+        <CommentList comments={comments} />
+      </CommentsToggler>
     </div>
   );
 };

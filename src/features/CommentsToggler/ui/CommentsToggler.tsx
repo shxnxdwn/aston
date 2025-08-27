@@ -2,13 +2,13 @@ import styles from './CommentsToggler.module.css';
 import { useCallback, useState } from 'react';
 import { type CommentType } from '@/entities/Comment';
 import Button from '@/shared/ui/Button';
-import CommentList from '@/widgets/CommentList';
 
 type CommentsTogglerProps = {
   comments: CommentType[];
+  children: ReactNode;
 };
 
-const CommentsToggler = ({ comments }: CommentsTogglerProps) => {
+const CommentsToggler = ({ comments, children }: CommentsTogglerProps) => {
   const [isCommentsVisible, setIsCommentsVisible] = useState(false);
 
   const handleCommentsToggler = useCallback(() => {
@@ -33,9 +33,7 @@ const CommentsToggler = ({ comments }: CommentsTogglerProps) => {
       </div>
 
       <div className={`${styles.commentsWrapper} ${isCommentsVisible ? styles.visible : ''}`}>
-        <div className={styles.commentListContainer}>
-          <CommentList comments={comments} />
-        </div>
+        <div className={styles.commentListContainer}>{children}</div>
       </div>
     </section>
   );
