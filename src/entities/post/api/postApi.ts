@@ -1,8 +1,30 @@
-import apiService from '@/shared/api/apiService';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { BASE_URL } from '@/shared/api/config';
 import type { PostType } from '../model/types';
 
-const getPosts = (): Promise<PostType[]> => apiService<PostType[]>('posts');
-const getPostById = (postId: number): Promise<PostType> => apiService<PostType>(`posts/${postId}`);
-const getPostsByUserId = (userId: string): Promise<PostType[]> => apiService<PostType[]>(`users/${userId}/posts`);
+export const postsApi = createApi({
+  reducerPath: 'postsApi',
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  tagTypes: ['Post'],
+  endpoints: (builder) => ({
+    getPosts: builder.query<PostType[], void>({
+      query: () => 'posts',
+      providesTags: (result) =>
+        result
+          ? [...result.map(({ id }) => ({ type: 'Post' as const, id })), { type: 'Post', id: 'LIST' }]
+          : [{ type: 'Post', id: 'LIST' }]
+    }),
 
-export { getPosts, getPostById, getPostsByUserId };
+    getPostById: builder.query<PostType, number | string>({
+      query: (postId) => `posts/${postId}`,
+      providesTags: (_result, _error, id) => [{ type: 'Post', id }]
+    }),
+
+    getPostsByUserId: builder.query<PostType[], string | number>({
+      query: (userId) => `users/${userId}/posts`,
+      providesTags: (result) => (result ? result.map(({ id }) => ({ type: 'Post' as const, id })) : [])
+    })
+  })
+});
+
+export const { useGetPostsQuery, useGetPostByIdQuery, useGetPostsByUserIdQuery } = postsApi;

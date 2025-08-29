@@ -1,10 +1,33 @@
-import apiService from '@/shared/api/apiService';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { BASE_URL } from '@/shared/api/config';
 import type { AlbumType } from '../model/types';
 
-const getAlbums = (): Promise<AlbumType[]> => apiService<AlbumType[]>('albums');
+export const albumsApi = createApi({
+  reducerPath: 'albumsApi',
+  baseQuery: fetchBaseQuery({
+    baseUrl: BASE_URL
+  }),
+  tagTypes: ['Album'],
 
-const getAlbumById = (id: number): Promise<AlbumType> => apiService<AlbumType>(`albums/${id}`);
+  endpoints: (builder) => ({
+    getAlbums: builder.query<AlbumType[], void>({
+      query: () => 'albums',
+      providesTags: (result) =>
+        result
+          ? [...result.map(({ id }) => ({ type: 'Album' as const, id })), { type: 'Album', id: 'LIST' }]
+          : [{ type: 'Album', id: 'LIST' }]
+    }),
 
-const getAlbumsByUserId = (userId: string): Promise<AlbumType[]> => apiService<AlbumType[]>(`users/${userId}/albums`);
+    getAlbumById: builder.query<AlbumType, number>({
+      query: (id) => `albums/${id}`,
+      providesTags: (_result, _error, id) => [{ type: 'Album', id }]
+    }),
 
-export { getAlbums, getAlbumById, getAlbumsByUserId };
+    getAlbumsByUserId: builder.query<AlbumType[], string | number>({
+      query: (userId) => `users/${userId}/albums`,
+      providesTags: (result) => (result ? result.map(({ id }) => ({ type: 'Album' as const, id })) : [])
+    })
+  })
+});
+
+export const { useGetAlbumsQuery, useGetAlbumByIdQuery, useGetAlbumsByUserIdQuery } = albumsApi;

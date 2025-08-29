@@ -1,3 +1,7 @@
-export type { TodoType } from './model/types';
 export { default } from './ui/Todo';
-export { getTodos, getTodoById, getTodosByUserId } from './api/todoApi';
+
+export type { TodoType } from './model/types';
+
+export { todosApi, useGetTodosQuery, useGetTodoByIdQuery, useGetTodosByUserIdQuery } from './api/todoApi';
+
+export { todoActions, todoSelectors, todoReducer } from './model/slice/todoSlice';

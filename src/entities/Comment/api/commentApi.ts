@@ -1,16 +1,24 @@
-import apiService from '@/shared/api/apiService';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { BASE_URL } from '@/shared/api/config';
 import type { CommentType } from '../model/types';
 
-const getComments = (): Promise<CommentType[]> => apiService<CommentType[]>('comments');
+export const commentsApi = createApi({
+  reducerPath: 'commentsApi',
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  tagTypes: ['Comment'],
+  endpoints: (builder) => ({
+    getComments: builder.query<CommentType[], void>({
+      query: () => 'comments',
+      providesTags: (result) =>
+        result
+          ? [...result.map(({ id }) => ({ type: 'Comment' as const, id })), { type: 'Comment', id: 'LIST' }]
+          : [{ type: 'Comment', id: 'LIST' }]
+    }),
+    getCommentsByPostId: builder.query<CommentType[], number | string>({
+      query: (postId) => `comments?postId=${postId}`,
+      providesTags: (result) => (result ? result.map(({ id }) => ({ type: 'Comment' as const, id })) : [])
+    })
+  })
+});
 
-const getCommentsByPostId = async (postId: number): Promise<CommentType[] | null> => {
-  try {
-    const allComments = await getComments();
-    return allComments.filter((comment) => comment.postId === postId);
-  } catch (error) {
-    console.log('Failed to load comments', error);
-    return null;
-  }
-};
-
-export { getComments, getCommentsByPostId };
+export const { useGetCommentsQuery, useGetCommentsByPostIdQuery } = commentsApi;

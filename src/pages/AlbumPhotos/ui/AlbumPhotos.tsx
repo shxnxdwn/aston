@@ -1,10 +1,11 @@
 import styles from './AlbumPhotos.module.css';
 import { useParams } from 'react-router-dom';
-import { PhotoList, usePhotos } from '@/widgets/PhotoList';
+import { PhotoList } from '@/widgets/PhotoList';
+import { useGetPhotosByAlbumIdQuery } from '@/entities/Photo';
 
 const AlbumPhotos = () => {
   const { id } = useParams<{ id: string }>();
-  const { photos, isLoading, error } = usePhotos({ albumId: Number(id) });
+  const { data: photos, isLoading, isError } = useGetPhotosByAlbumIdQuery(Number(id), { skip: !id });
 
   if (!id) {
     return (
@@ -14,11 +15,10 @@ const AlbumPhotos = () => {
     );
   }
 
-  if (error) {
+  if (isError) {
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Ошибка при загрузке фотографий</h2>
-        <p>{error}</p>
       </div>
     );
   }
@@ -27,7 +27,7 @@ const AlbumPhotos = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Фотографии из альбома #{id}</h1>
       <div className={styles.contentWrapper}>
-        <PhotoList isLoading={isLoading} photos={photos} />
+        <PhotoList isLoading={isLoading} photos={photos || []} />
       </div>
     </div>
   );

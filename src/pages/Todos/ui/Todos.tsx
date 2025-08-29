@@ -1,14 +1,14 @@
 import styles from './Todos.module.css';
-import { TodoList, useTodos } from '@/widgets/TodoList';
+import { TodoList } from '@/widgets/TodoList';
+import { useGetTodosQuery } from '@/entities/Todo';
 
 const Todos = () => {
-  const { todos, isLoading, error } = useTodos();
+  const { data: todos, isLoading, isError } = useGetTodosQuery();
 
-  if (error) {
+  if (isError) {
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Ошибка при загрузке задач</h2>
-        <p>{error}</p>
       </div>
     );
   }
@@ -17,7 +17,7 @@ const Todos = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Задачи</h1>
       <div className={styles.contentWrapper}>
-        <TodoList isLoading={isLoading} todos={todos} />
+        <TodoList isLoading={isLoading} todos={todos || []} />
       </div>
     </div>
   );

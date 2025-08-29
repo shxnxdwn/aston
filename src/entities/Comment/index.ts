@@ -1,3 +1,7 @@
-export type { CommentType } from './model/types';
 export { default } from './ui/Comment';
-export { getComments, getCommentsByPostId } from './api/commentApi';
+
+export type { CommentType } from './model/types';
+
+export { commentsApi, useGetCommentsQuery, useGetCommentsByPostIdQuery } from './api/commentApi';
+
+export { commentActions, commentSelectors, commentReducer } from './model/slice/commentSlice';
