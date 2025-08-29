@@ -1,14 +1,14 @@
 import styles from './Users.module.css';
-import { UserList, useUsers } from '@/widgets/UserList';
+import { UserList } from '@/widgets/UserList';
+import { useGetUsersQuery } from '@/entities/User';
 
 const Users = () => {
-  const { users, isLoading, error } = useUsers();
+  const { data: users, isLoading, isError } = useGetUsersQuery();
 
-  if (error) {
+  if (isError) {
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Ошибка при загрузке пользователей</h2>
-        <p>{error}</p>
       </div>
     );
   }
@@ -17,7 +17,7 @@ const Users = () => {
     <div className={styles.container}>
       <h1 className={styles.title}>Пользователи</h1>
       <div className={styles.contentWrapper}>
-        <UserList isLoading={isLoading} users={users} />
+        <UserList isLoading={isLoading} users={users || []} />
       </div>
     </div>
   );

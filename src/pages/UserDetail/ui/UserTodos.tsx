@@ -1,15 +1,17 @@
 import { useParams } from 'react-router-dom';
-import { TodoList, useUserTodos } from '@/widgets/TodoList';
+import { TodoList } from '@/widgets/TodoList';
+import { useGetTodosByUserIdQuery } from '@/entities/Todo';
 
 const UserTodos = () => {
   const { id: userId } = useParams<{ id: string }>();
-  const { todos, isLoading, error } = useUserTodos(userId);
 
-  if (error) {
+  const { data: todos, isLoading, isError } = useGetTodosByUserIdQuery(userId!, { skip: !userId });
+
+  if (isError) {
     return <p>Ошибка при загрузке задач пользователя.</p>;
   }
 
-  return <TodoList todos={todos} isLoading={isLoading} />;
+  return <TodoList todos={todos || []} isLoading={isLoading} />;
 };
 
 export default UserTodos;

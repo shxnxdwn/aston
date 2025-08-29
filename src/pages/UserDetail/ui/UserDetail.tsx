@@ -3,11 +3,12 @@ import { Outlet, useParams } from 'react-router-dom';
 import Loader from '@/shared/ui/Loader';
 import UserInfo from '@/widgets/UserInfo';
 import UserTabs from '@/widgets/UserTabs';
-import useUserDetail from '@/pages/UserDetail/model/hooks/useUserDetail';
+import { useGetUserByIdQuery } from '@/entities/User';
 
 const UserDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const { user, isLoading, error } = useUserDetail(id);
+
+  const { data: user, isLoading, isError } = useGetUserByIdQuery(Number(id), { skip: !id });
 
   if (isLoading) {
     return (
@@ -17,8 +18,8 @@ const UserDetail = () => {
     );
   }
 
-  if (error || !user) {
-    return <div className={styles.statusWrapper}>{error || 'User not found.'}</div>;
+  if (isError || !user) {
+    return <div className={styles.statusWrapper}>{'User not found.'}</div>;
   }
 
   return (

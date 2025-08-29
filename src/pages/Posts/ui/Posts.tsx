@@ -1,18 +1,20 @@
 import styles from './Posts.module.css';
 import { useMemo, useState } from 'react';
 import { filterByLength, type LengthFilterType, PostLengthFilter } from '@/features/PostLengthFilter';
-import { PostList, usePosts } from '@/widgets/PostList';
+import { PostList } from '@/widgets/PostList';
+import { useGetPostsQuery } from '@/entities/Post';
 
 const Posts = () => {
-  const { posts, isLoading, error } = usePosts();
-  const [activeFilter, setActiveFilter] = useState<LengthFilterType>('all');
-  const filteredPosts = useMemo(() => filterByLength(posts, activeFilter), [posts, activeFilter]);
+  const { data: posts, isLoading, isError } = useGetPostsQuery();
 
-  if (error) {
+  const [activeFilter, setActiveFilter] = useState<LengthFilterType>('all');
+
+  const filteredPosts = useMemo(() => filterByLength(posts || [], activeFilter), [posts, activeFilter]);
+
+  if (isError) {
     return (
       <div className={styles.container}>
         <h2 className={styles.title}>Ошибка при загрузке постов</h2>
-        <p>{error}</p>
       </div>
     );
   }
