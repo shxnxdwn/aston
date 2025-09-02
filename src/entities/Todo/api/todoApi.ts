@@ -1,10 +1,30 @@
-import apiService from '@/shared/api/apiService';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { BASE_URL } from '@/shared/api/config';
 import type { TodoType } from '../model/types';
 
-const getTodos = (): Promise<TodoType[]> => apiService<TodoType[]>('todos');
+export const todosApi = createApi({
+  reducerPath: 'todosApi',
+  baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
+  tagTypes: ['Todo'],
+  endpoints: (builder) => ({
+    getTodos: builder.query<TodoType[], void>({
+      query: () => 'todos',
+      providesTags: (result) =>
+        result
+          ? [...result.map(({ id }) => ({ type: 'Todo' as const, id })), { type: 'Todo', id: 'LIST' }]
+          : [{ type: 'Todo', id: 'LIST' }]
+    }),
 
-const getTodoById = (id: number): Promise<TodoType> => apiService<TodoType>(`todos/${id}`);
+    getTodoById: builder.query<TodoType, number | string>({
+      query: (todoId) => `todos/${todoId}`,
+      providesTags: (_result, _error, id) => [{ type: 'Todo', id }]
+    }),
 
-const getTodosByUserId = (userId: string): Promise<TodoType[]> => apiService<TodoType[]>(`users/${userId}/todos`);
+    getTodosByUserId: builder.query<TodoType[], string | number>({
+      query: (userId) => `users/${userId}/todos`,
+      providesTags: (result) => (result ? result.map(({ id }) => ({ type: 'Todo' as const, id })) : [])
+    })
+  })
+});
 
-export { getTodos, getTodoById, getTodosByUserId };
+export const { useGetTodosQuery, useGetTodoByIdQuery, useGetTodosByUserIdQuery } = todosApi;

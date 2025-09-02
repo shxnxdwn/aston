@@ -1,3 +1,7 @@
-export type { PhotoType } from './model/types';
 export { default } from './ui/Photo';
-export { getPhotosByAlbumId } from './api/photoApi';
+
+export type { PhotoType } from './model/types';
+
+export { photosApi, useGetPhotosQuery, useGetPhotosByAlbumIdQuery } from './api/photoApi';
+
+export { photoActions, photoSelectors, photoReducer } from './model/slice/photoSlice';
